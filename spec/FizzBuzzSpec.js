@@ -14,6 +14,13 @@ describe("FizzBuzz", function() {
     fizzbuzz = new FizzBuzz();
   });
 
+  describe("when number is not fizz worthy", function() {
+
+    it("should return the number", function() {
+        expect(fizzbuzz.go(1)).toEqual(1)
+        expect(fizzbuzz.go(41)).toEqual(41)
+    });
+  });
 
   describe("when a number is a multiple of 3", function()  {
 
@@ -29,13 +36,20 @@ describe("FizzBuzz", function() {
 
   });
 
-  xdescribe("when a number is a multiple of 5", function() {
+  describe("when a number is a multiple of 5", function() {
 
     it("should return buzz", function() {
       expect(fizzbuzz.go(5)).toBe('buzz')
-      expect(fizzbuzz.go(45)).toBe('buzz')
+      expect(fizzbuzz.go(50)).toBe('buzz')
     })
   });
 
+  describe("when a number is a multiiple of 3 and 5", function() {
+
+    it("should return fizzbuzz", function() {
+      expect(fizzbuzz.go(15)).toBe('fizzbuzz')
+      expect(fizzbuzz.go(45)).toBe('fizzbuzz')
+    })
+  });
 
 });
