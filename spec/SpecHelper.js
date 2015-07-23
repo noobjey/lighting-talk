@@ -1,12 +1,12 @@
 beforeEach(function () {
+  // Function to create a custom matcher
   jasmine.addMatchers({
-    toBePlaying: function () {
+    toBeFizz: function () {
       return {
+        // Has to return a function that implements the compare function
         compare: function (actual, expected) {
-          var player = actual;
-
           return {
-            pass: player.currentlyPlayingSong === expected && player.isPlaying
+            pass: actual === 'fizz'
           };
         }
       };

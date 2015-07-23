@@ -14,6 +14,13 @@ describe("FizzBuzz", function() {
     fizzbuzz = new FizzBuzz();
   });
 
+  xdescribe("when input is not a number", function() {
+
+    it("should throw an TypeError", function() {
+
+    })
+  });
+
   describe("when number is not fizz worthy", function() {
 
     it("should return the number", function() {
@@ -30,8 +37,8 @@ describe("FizzBuzz", function() {
       //expect takes the action to be tested
       // and the call 'toBe' is a matcher function
       // matcher function defines the expected value
-      expect(fizzbuzz.go(3)).toEqual('fizz');
-      expect(fizzbuzz.go(36)).toEqual('fizz');
+      expect(fizzbuzz.go(3)).toBeFizz();
+      expect(fizzbuzz.go(36)).toBeFizz();
     });
 
   });
